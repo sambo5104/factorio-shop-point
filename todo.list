@@ -1,2 +1,0 @@
-- Make sync of non_shop variable (may be via convert to json_to_table)
-But why set_shop position syncs normaly?
