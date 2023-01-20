@@ -82,6 +82,8 @@ function(command)
 	end
 	if global[fA.name] == nil or global[fB.name] == nil 
 		or global[fA.name] or global[fB.name] then
+		fA = nil
+		fB = nil
 		invoker.print("One or more of selected teams are member of non-shop list")
 		return
 	end
