@@ -39,14 +39,15 @@ function(command)
 	is_close = str2bool[command.parameter]
 	if command.parameter == nil then
 		if global[invoker.force.name] == nil then
-			goto init_shop
+			global[invoker.force.name] = true
+			invoker.print("Shop closed")
+			return
 		end
 
 		is_close = not global[invoker.force.name]
 	end
 
 	if is_close then
-		::init_shop::
 		global[invoker.force.name] = true
 		invoker.print("Shop closed")
 	else
