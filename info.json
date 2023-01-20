@@ -1,11 +1,11 @@
 {
   "name": "shop_point",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "factorio_version": "1.1",
   "title": "Shop point",
-  "author": "PixelGuy19",
-  "contact": "blackmamba@ex-minds.ru",
-  "homepage": "https://motherfuckingwebsite.com/",
+  "author": "sambo",
+  "contact": "sambo@ex-minds.ru",
+  "homepage": "https://github.com/sambo5104/factorio-shop-point",
   "description": "Simple shop commands for your multiplayer game.",
   "dependencies": ["base >= 0.17.0"]
 }

@@ -1,11 +1,11 @@
--- with main code of this mod
-str2bool = { ["false"]=false, ["true"]=true  }
 function TableConcat(t1,t2)
     for i=1,#t2 do
         t1[#t1+i] = t2[i]
     end
     return t1
 end
+
+-- split string by seperator
 function split(inputstr, sep)
         if sep == nil then
                 sep = "%s"
@@ -17,13 +17,16 @@ function split(inputstr, sep)
         return t
 end
 
-positions = {}
-fA = nil
-fB = nil
+
+-- local shop position
 shop_pos = {x=0,y=0}
 
--- Move it to global["non_shop"]
-non_shop = {}
+-- force objects
+fA = nil
+fB = nil
+
+-- all saved positions
+positions = {}
 
 -- set default non-shop members
 script.on_init(function()
@@ -32,10 +35,13 @@ script.on_init(function()
 	end
 end)
 
+-- close or open shop to can be invited by other players
 commands.add_command("close_shop",
 [[true/false]],
 function(command)
 	invoker = game.get_player(command.player_index)
+
+	str2bool = { ["false"] = false, ["true"] = true  }
 	is_close = str2bool[command.parameter]
 	if command.parameter == nil then
 		if global[invoker.force.name] == nil then
@@ -56,7 +62,7 @@ function(command)
 	end
 end)
 
--- Start shop session by forceA and forceB
+-- start shop session by forceA and forceB
 commands.add_command("start_shop",
 [[forceA forceB]],
 function(command)
@@ -102,7 +108,7 @@ function(command)
 	end
 end)
 
--- End shop session
+-- end shop session
 commands.add_command("end_shop",
 nil,
 function(command)
@@ -126,7 +132,7 @@ function(command)
 	positions = {}
 end)
 
--- Set new shop position
+-- set new shop position for force
 commands.add_command("set_shop",
 nil,
 function(command)
